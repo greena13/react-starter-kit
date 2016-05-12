@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible", content="ie=edge")
+        meta(name="description", content="")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title React Starter Kit
+
+        link(rel="apple-touch-icon", href="apple-touch-icon.png")
+
+        link(href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext', rel='stylesheet', type='text/css')
+
+        if assets.main.css
+            link(rel="stylesheet", href="#{assets.main.css}")
+
+        script(type='text/javascript').
+            window.__INITIAL_STATE__ = !{initialState};
+    body
+        div(id='main')
+            div
+                !=htmlContent
+
+    script(type='text/javascript', src=assets.main.js)
+
+    if productionBuild

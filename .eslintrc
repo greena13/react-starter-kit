@@ -1,0 +1,31 @@
+{
+  // I want to use babel-eslint for parsing!
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+
+  "env": {
+    // I write for browser
+    "browser": true,
+    // in CommonJS
+    "node": true
+  },
+  // To give you an idea how to override rule options:
+  "rules": {
+    "quotes": [2, "single"],
+    "eol-last": [0],
+    "no-mixed-requires": [0],
+    "no-underscore-dangle": [0],
+    "no-console": [0],
+    "semi": ["error", "always"]
+  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}
