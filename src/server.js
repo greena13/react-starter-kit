@@ -22,7 +22,6 @@ function htmlTemplateVariables(htmlContent = '', initialState = {}) {
   return {
     htmlContent,
     initialState: JSON.stringify(initialState),
-    assetsUrl: process.env.ASSETS_PATH,
     assets: assets,
     productionBuild: process.env.NODE_ENV === 'production'
   };
@@ -70,12 +69,8 @@ try {
   });
 
   server.listen(port, () => {
-    const { assetsUrl } = htmlTemplateVariables();
-
     console.info('Server is listening on port %s.', process.env['SERVER_PORT']);
     console.info('- This can be changed using %s=port', 'SERVER_PORT');
-    console.info('');
-    console.info('Using asset path "%s"', assetsUrl);
   });
 
   if (process.env.NODE_ENV === 'development') {

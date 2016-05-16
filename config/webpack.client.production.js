@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: './build' + destFolderName,
     filename: '[name].[hash].js',
-    publicPath: process.env.ASSETS_PATH || destFolderName
+    publicPath: process.env.ASSETS_PATH
   },
 
   node: {
