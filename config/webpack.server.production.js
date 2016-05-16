@@ -3,6 +3,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var clientConfig = require('./webpack.client.production');
+
+const publicPath = clientConfig.output.publicPath;
 
 module.exports = {
   entry: './src/server.js',
@@ -11,7 +14,7 @@ module.exports = {
     path: path.join(__dirname, '../build'),
     filename: 'server.js',
     libraryTarget: 'commonjs2',
-    publicPath: '/'
+    publicPath
   },
 
   target: 'node',
