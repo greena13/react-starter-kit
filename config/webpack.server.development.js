@@ -57,17 +57,17 @@ module.exports = {
 
       {
         test: /\.css/,
-        loader: 'style!css!postcss-loader'
+        loader: 'css-loader/locals?importLoaders=1!postcss'
       },
 
       {
         test: /^((?!\.global).)*\.less$/,
-        loader: 'css-loader/locals?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
+        loader: 'css-loader/locals?modules&localIdentName=[name]__[local]___[hash:base64:5]&indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
       },
 
       {
         test: /\.global\.less$/,
-        loader: 'css-loader/locals?localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
+        loader: 'css-loader/locals?importLoaders=1!postcss!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
       },
 
       {

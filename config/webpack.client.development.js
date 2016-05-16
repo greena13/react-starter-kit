@@ -66,17 +66,17 @@ module.exports = {
 
       {
         test: /\.css$/,
-        loader: 'style!css-loader?&localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
+        loader: 'style!css?importLoaders=1!postcss!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
       },
 
       {
         test: /^((?!\.global).)*\.less$/,
-        loader: 'style!css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
+        loader: 'style!css?modules&localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
       },
 
       {
         test: /\.global\.less$/,
-        loader: 'style!css!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
+        loader: 'style!css?importLoaders=1!postcss!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
       },
 
       {

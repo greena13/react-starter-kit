@@ -46,17 +46,17 @@ module.exports = {
 
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style!css-loader?&localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader')
+        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss')
       },
 
       {
         test: /^((?!\.global).)*\.less$/,
-        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version')
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version')
       },
 
       {
         test: /\.global\.less$/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version')
+        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version')
       },
 
       {

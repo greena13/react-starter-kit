@@ -47,13 +47,18 @@ module.exports = {
       },
 
       {
+        test: /\.css/,
+        loader: 'css-loader/locals?importLoaders=1!postcss'
+      },
+
+      {
         test: /^((?!\.global).)*\.less$/,
-        loader: 'css-loader/locals!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
+        loader: 'css-loader/locals?modules&localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
       },
 
       {
         test: /\.global\.less$/,
-        loader: 'css-loader/locals!css?localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
+        loader: 'css-loader/locals?localIdentName=[name]__[local]___[hash:base64:5]&importLoaders=1!postcss-loader!less?indentedSyntax=true&outputStyle=expanded&browsers=last 2 version'
       },
 
       {
