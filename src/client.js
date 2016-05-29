@@ -2,8 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import _ from 'lodash';
 
-import { match, Router }  from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { match, Router, browserHistory }  from 'react-router';
 import { Provider }  from 'react-redux';
 
 import FastClick from 'fastclick';
@@ -20,12 +19,12 @@ function run() {
   const { pathname, search } = window.location;
   const location = `${pathname}${search}`;
 
-  match({ routes: ApplicationRoutes, location }, (error, redirectLocation, renderProps) => {
+  match({ routes: ApplicationRoutes, location, history: browserHistory }, (error, redirectLocation, renderProps) => {
     const store = configureStore(window.__INITIAL_STATE__);
 
     render(
       <Provider store={store}>
-        <Router {...renderProps} history={createBrowserHistory()} />
+        <Router {...renderProps} />
       </Provider>,
 
       document.getElementById('main')
