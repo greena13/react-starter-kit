@@ -1,12 +1,16 @@
 doctype html
-html
+html&attributes(head.htmlAttributes.toComponent())
     head
         meta(charset="utf-8")
         meta(http-equiv="x-ua-compatible", content="ie=edge")
-        meta(name="description", content="")
         meta(name="viewport", content="width=device-width, initial-scale=1")
 
-        title React Starter Kit
+        != head.title.toString()
+        != head.base.toString()
+        != head.meta.toString()
+        != head.link.toString()
+        != head.script.toString()
+        != head.style.toString()
 
         link(rel="apple-touch-icon", href="apple-touch-icon.png")
 

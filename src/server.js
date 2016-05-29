@@ -20,8 +20,9 @@ import ApplicationRoutes from './routes/ApplicationRoutes';
 import ButtonColors from './constants/ButtonColors';
 
 // environment variable names
-function htmlTemplateVariables(htmlContent = '', initialState = {}) {
+function htmlTemplateVariables(head, htmlContent = '', initialState = {}) {
   return {
+    head,
     htmlContent,
     initialState: JSON.stringify(initialState),
     assets: assets,
@@ -62,8 +63,9 @@ try {
             </Provider>
           );
 
-          this.render('index', htmlTemplateVariables(htmlContent, initialState), true);
           let head = Helmet.rewind();
+
+          this.render('index', htmlTemplateVariables(head, htmlContent, initialState), true);
 
           callback(null);
         }

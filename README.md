@@ -57,6 +57,8 @@ Navigate your browser to the port specified above.
 
 **XHR:** [Isomorphic fetch](https://github.com/github/fetch)
 
+**Populating html & head tags:** [React Helmet](https://github.com/nfl/react-helmet)
+
 **Server-side rendering:** [Koa server](http://koajs.com/), with [Pug (Jade)](https://github.com/pugjs/pug) templates
 
 ## Development Tools:
