@@ -8,6 +8,8 @@ import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 
+import Helmet from 'react-helmet';
+
 import assets from './assets';
 
 import { match, RouterContext } from 'react-router';
@@ -61,6 +63,7 @@ try {
           );
 
           this.render('index', htmlTemplateVariables(htmlContent, initialState), true);
+          let head = Helmet.rewind();
 
           callback(null);
         }
