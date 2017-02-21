@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 import ButtonContainer from '../containers/ButtonContainer';

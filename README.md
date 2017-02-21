@@ -1,11 +1,17 @@
-# React Starter Kit
+# React Starter Kit v2.0
 
 Cloneable React starter project that includes development tools and production optimisations.
 
 
+## Disclaimer 
+
 This may not be the optimal starting point for your project. It includes a lot of different libraries and tools that cover many concerns - some of which you may wish to tackle differently. There are many React starter kits and templates available; make sure you choose the one that best suits your needs (the list of inspirations below may be a good place to start).
   
-This project remains in its infancy and will be subject to continued improvement.
+  
+## Upgrading from an earlier version
+
+
+Version 2.0 of `react-starter-kit` has undergone some significant changes, including upgrading all dependencies and moving to Webpack 2.0.
 
 ## Getting Started
 
@@ -24,7 +30,7 @@ Run the development script
     npm run watch
     
     
-Navigate your browser to localhost:8082
+Navigate your browser to `http://localhost:8080`
 
 ## Generating the production build
 
@@ -33,19 +39,15 @@ Navigate your browser to localhost:8082
 
 ## Testing the production build on your local machine
 
-Build the production bundle:
-
-    npm run build-local
-    
 Start the server, specifying the port to mount to, and the url that the assets will be hosted on: 
 
-    SERVER_PORT=8081 ASSETS_PATH='http://localhost:8080/' node build/server.js
+    SERVER_PORT=8080 ASSETS_PATH='http://localhost:8081/assets/' node build/scripts/server.js
      
 Use a simple http server like `http-server` to serve the build directory (on the url specified using ASSETS_PATH)
   
-    http-server ./build -p 8080
+    http-server ./build/public -p 8081
     
-Navigate your browser to the port specified above.
+Navigate your browser to the port specified above (using the `SERVER_PORT` environment variable).
     
 ## Architecture
  
@@ -71,7 +73,7 @@ Navigate your browser to the port specified above.
 
 **Code linting:** [ESLint](https://github.com/MoOx/eslint-loader)
 
-**Data Visualisation:** Redux Devtools that opens in a separate browser window.
+**Data Visualisation:** Redux Devtools that can be opened in your browser using `ctrl+shift+x` and moved around using `ctrl+shift+z`.
 
 ## Production optimisation:
  

@@ -4,7 +4,7 @@
   "env": {
     "development-client": {
       "plugins": [
-        'transform-runtime',
+        "transform-runtime",
         ["react-transform", {
           "transforms": [
             {
@@ -13,8 +13,8 @@
               "locals": ["module"]
             },
             {
-              transform: 'react-transform-catch-errors',
-              imports: ['react', 'redbox-react']
+              "transform": "react-transform-catch-errors",
+              "imports": ["react", "redbox-react"]
             }
           ]
         }]
@@ -34,8 +34,8 @@
               "locals": ["module"]
             },
             {
-              transform: 'react-transform-catch-errors',
-              imports: ['react', 'redbox-react']
+              "transform": "react-transform-catch-errors",
+              "imports": ["react", "redbox-react"]
             }
           ]
         }]
